@@ -18,10 +18,3 @@ var arr5 = [1, 2, , 4, 5];
 console.log(arr5.flat());
 // [1, 2, 4, 5]
 
-let arr_string = ["it's Sunny in", "", "California"];
-
-console.log(arr_string.map(x => x.split(" ")));
-// [["it's","Sunny","in"],[""],["California"]]
-
-console.log(arr_string.flatMap(x => x.split(" ")));
-// ["it's","Sunny","in", "", "California"]

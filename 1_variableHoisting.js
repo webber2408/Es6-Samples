@@ -18,7 +18,7 @@ y = 6; // Initialization
 var flag = false;
 (function(){
     console.log(flag);
-    var flag = true; // JavaScript only hoists declarations, not initializations, hence the above log prints false
+    var flag = true; // JavaScript only hoists declarations, not initializations, hence the above log prints undefined
     console.log(flag);
 
     /*

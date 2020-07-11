@@ -1,10 +1,11 @@
-Array.prototype.flat = (arr) => {
+/* Overriding Array.flat() */
 
+Array.prototype.flat = function(){
     const result = [];
 
-    arr.forEach((i) => {
+    this.forEach((i) => {
         if (Array.isArray(i)) {
-            result.push(...flat(i));
+            result.push(...i.flat());
         } else {
             result.push(i);
         }
@@ -15,5 +16,4 @@ Array.prototype.flat = (arr) => {
 
 // Usage
 const nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]];
-
-console.log(nested.flat())
+console.log(nested.flat());
