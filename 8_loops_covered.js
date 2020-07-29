@@ -4,8 +4,16 @@ var dogDetails = {
     color: "brown"
 };
 
+//while
+var x = 0;
+while(x<pets.length){
+  console.log(pets[x]);
+  x++;
+}
 
 //for
+//The for loop has three clauses: the initialization clause,
+//the conditional test clause, and the update clause.
 for(var i = 0; i < pets.length; i++){
     console.log(pets[i]);
 }

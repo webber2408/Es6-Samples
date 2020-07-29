@@ -1,7 +1,7 @@
 /* Map & FlatMap */
 
 /*
-Map calls a provided callback function once for each element in an array, in order, 
+Map calls a provided callback function once for each element in an array, in order,
 and constructs a new array from the results.
 Callback is invoked only for indexes of the array which have assigned values (including undefined).
 */
@@ -29,7 +29,6 @@ console.log(arr_string);
 arr_string = ["Nice to see", "you", "John"];
 
 //Example 3 (Flatting the array)
-
 console.log(arr_string.map(x => x.split(" ")));
 console.log(arr_string.flatMap(x => x.split(" ")));
 /*

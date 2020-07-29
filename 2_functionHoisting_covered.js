@@ -11,8 +11,8 @@ bar("Veronica");
 function bar(name){
     console.log(name);
 }
-/* One of the advantages of JavaScript putting function declarations into memory 
-before it executes any code segment is that it allows you to use a function 
+/* One of the advantages of JavaScript putting function declarations into memory
+before it executes any code segment is that it allows you to use a function
 before you declare it in your code.
 
 Output:
