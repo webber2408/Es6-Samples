@@ -15,3 +15,4 @@ Previous JS Concepts:
 ⚡ JS Concept #14 - Var (local vs global scope)⚡ - https://rb.gy/wbisnf
 ⚡ JS Concept #15 - Manipulating Array Elements ⚡ - https://rb.gy/q81vok
 ⚡ JS Concept #16 - Building range generators! ⚡ - https://rb.gy/24kisf
+⚡ JS Concept #17 - Equality & Coercion ⚡ - https://rb.gy/tpjk7k
