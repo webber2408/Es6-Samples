@@ -13,22 +13,11 @@ function closureExample(nameArg){
     }
     return getName;
 }
-
 let getName = closureExample("Bellamy");
-
 getName(); // Bellamy
-
-
-//Example 1.1 (Follow up)
-function closureExample1(nameArg){
-  let name = nameArg;
-}
-// console.log(name); // Name is not defined. Obvio..duh?
-
 
 //Example 2
 // In a closure JS Variables are kept by reference
-
 function fun(){
     let num = 1;
     var getNum = () => {
