@@ -42,3 +42,62 @@ Output (When we comment out line 27):
 
 Here, both function definition and declaration are hoisted
 */
+
+//Example
+foo(); // TypeError
+bar(); // ReferenceError
+var foo = function bar() {
+    // ...
+};
+
+// Above one is interpreted as (not real code)
+var foo;
+foo(); // TypeError
+bar(); // ReferenceError
+foo = function() {
+    //var bar = ...self...
+    // ...
+}
+
+
+//Example (Functions first!)
+
+foo(); // 1
+var foo;
+function foo() {
+    console.log( 1 );
+}
+foo = function() {
+    console.log( 2 );
+};
+
+// the above code is interpreted by the engine as
+function foo() {
+    console.log( 1 );
+}
+foo(); // 1
+foo = function() {
+    console.log( 2 );
+};
+
+/*
+Notice that var foo was the duplicate (and thus ignored) declaration, even
+though it came before the function foo()... declaration, because function
+declarations are hoisted before normal variables.
+*/
+
+
+// Example
+foo(); // 3
+function foo() {
+    console.log( 1 );
+}
+var foo = function() {
+    console.log( 2 );
+};
+function foo() {
+    console.log( 3 );
+}
+
+
+

@@ -1,0 +1,13 @@
+What's up guys? This is Rahul here, and I am highly pumped to go ahead and take up
+this JS Master Course guys in which we gonna be diving deep into the world of JavaScript, 
+How it works, both on screen & behind the screen (i.e. basically how it executes). Along with those we 
+are going to cover a lot more interesting concepts like Scopes, Functions, Closures, Promises, Generators
+and what not guys!
+
+So let's just begin!
+
+In this particular video, we are going to learn What is JavaScript? And Why the heck we need it?
+Other than that we gonna be covering two more topics that are variables and value types!
+
+
+

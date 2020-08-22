@@ -1,4 +1,10 @@
 // Variable Hoisting
+/*
+Note: Two distinct actions are taken for a variable assignment: First,
+Compiler declares a variable (if not previously declared) in the current Scope,
+and second, when executing, Engine looks up the variable in Scope and assigns
+to it, if found.
+*/
 
 //Example 1
 console.log(num); // Returns undefined, as only declaration was hoisted, no initialization has happened at this stage 
