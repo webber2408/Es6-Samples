@@ -29,9 +29,16 @@ function User(){
 
 var admin = User(); // didn't use new because wastage of resources
 /*
+
 Executing User() creates an instance of the User module—a whole
 new scope is created, and thus a whole new copy of each of these
 inner variables/functions.
+
+Important:
+----------
+Also, here login() and getUserDetails() implement a closure over the private members of
+the function User().
+
 */
 admin.login("admin", "admin1234"); // Closure
 admin.getUserDetails(); // Closure
