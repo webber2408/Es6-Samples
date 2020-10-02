@@ -17,4 +17,3 @@ console.log(arr4.flat(Infinity));
 var arr5 = [1, 2, , 4, 5];
 console.log(arr5.flat());
 // [1, 2, 4, 5]
-

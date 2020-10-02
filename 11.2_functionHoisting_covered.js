@@ -23,7 +23,6 @@ Veronica
 
 
 //Example 2
-
 definitionNotHoisted(); //TypeError: definitionNotHoisted is not a function
 
 definitionHoisted();
@@ -99,5 +98,7 @@ function foo() {
     console.log( 3 );
 }
 
-
-
+/*
+No matter where a function is invoked from, or even how it is invoked,
+its lexical scope is only defined by where the function was declared.
+*/

@@ -4,7 +4,7 @@ var num1 = "52";
 console.log(num < num1); //true [Implicit coercion takes place]
 /*
 If one of both the values in (<) inequality is
-not a string, then boh the values are coerced to
+not a string, then both the values are coerced to
 numbers, and a typical number comparison occurs.
 */
 
@@ -15,7 +15,7 @@ console.log(num2 > num3); //false
 /*
 If both the values in the (<) inquality
 operator are `strings`, the comparison
-is made lexicographically (aka alphabetically, 
+is made lexicographically (aka alphabetically,
 and "2" appears before "5"), hence false!
 */
 
@@ -28,5 +28,3 @@ Here str gets implicitly coerced to a number which is
 "NaN" and it is neither less nor greater than any other
 value
 */
-
-

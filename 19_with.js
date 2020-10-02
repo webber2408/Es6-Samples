@@ -1,6 +1,6 @@
 /*
-    `with` essentially creates a whole new lexical scope (again, at runtime) 
-    by treating an object reference as a scope and that object’s properties 
+    `with` essentially creates a whole new lexical scope (again, at runtime)
+    by treating an object reference as a scope and that object’s properties
     as scoped identifiers.
 */
 
@@ -23,11 +23,11 @@ console.log(name); // Jatil Yadav -> Scope Variable Leaked!!
     Since the JS Engine is unable to find a reference for `name`
     in the object `o1`, it follows the general rule of lexical
     scope lookup and declares the variable name in the global
-    scope, thus exposing it to the scope outside of the function, 
+    scope, thus exposing it to the scope outside of the function,
     `foo`. (Inshort, leaking it!)
 */
 
-// Not exaclty leaking? 
+// Not exaclty leaking? -> V.IMP.
 function person(){
     age = 24;
 }

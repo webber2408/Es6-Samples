@@ -18,15 +18,21 @@ for(var i = 0; i < pets.length; i++){
     console.log(pets[i]);
 }
 
-//for..in
+//for..in (Object)
 for(const key in dogDetails){
     console.log(`${key}:${dogDetails[key]}`);
 }
+for(const val in pets){
+  console.log(val); // prints index 0, 1, 2, 3
+}
 
-//for..of
+//for..of (Only on iterables | Array)
 for(const value of pets){
     console.log(value);
 }
+// for(const value of dogDetails){ // Error: dogDetails is not iterable
+//   console.log(value);
+// }
 
 //while
 var i = 0;

@@ -3,7 +3,7 @@
 //Example 1 (var)
 (function(){
     name = "Jughead";
-    console.log(name); 
+    console.log(name);
     // Returns Jughead, as `var` can be initialized / defined before its declaration.
     var name;
 })();
@@ -23,9 +23,9 @@ if it doesn't then it creates a property 'age' on the global object.
 
 // Example 2 (let)
 (function(){
-    name = "FP Jones"; 
+    name = "FP Jones";
     //ReferenceError: Cannot access 'name' before initialization
-    console.log(name); 
+    console.log(name);
     //Error because `let` can't be initialized / defined before its declaration unlike `var`
     let name;
 })();
@@ -34,5 +34,3 @@ if it doesn't then it creates a property 'age' on the global object.
 //Example 3 (const)
 const name = "John";
 name = "Doe"; //TypeError: Assignment to constant variable.
-
-

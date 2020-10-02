@@ -8,7 +8,7 @@ for (var i=1; i<=5; i++) {
 // prints 6 for 5 times! -- Why?
 // i values are not enclosed in a closure
 
-// So we put it in an IIFE as we know that execute immediately 
+// So we put it in an IIFE as we know that execute immediately
 // and maintain their own scope.
 for (var i=1; i<=5; i++) {
     (function(){

@@ -14,10 +14,10 @@ foo();
 
 
 // Scope in for loop (How let scoping works!)
-{  
+{
   let j;
   for (j=0; j<10; j++) {
-    let i = j; // re-bound for each iteration!
+    let i = j; // re-biund for each iteration!
     console.log( i );
   }
 }
