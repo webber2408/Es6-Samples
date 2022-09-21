@@ -17,3 +17,7 @@ console.log(arr4.flat(Infinity));
 var arr5 = [1, 2, , 4, 5];
 console.log(arr5.flat());
 // [1, 2, 4, 5]
+
+var arr6 = [1, 2, undefined, 4, 5];
+console.log(arr6.flat());
+// [1, 2, undefined, 4, 5]

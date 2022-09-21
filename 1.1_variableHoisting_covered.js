@@ -2,12 +2,12 @@
 /*
 Note: Two distinct actions are taken for a variable assignment: First,
 Compiler declares a variable (if not previously declared) in the current Scope,
-and second, when executing, Engine looks up the variable in Scope and assigns
+and second, when executing, Engine looks up the variable in Scope and assigns value
 to it, if found.
 */
 
 //Example 1
-console.log(num); // Returns undefined, as only declaration was hoisted, no initialization has happened at this stage 
+console.log(num); // Returns undefined, as only declaration was hoisted, no initialization has happened at this stage.
 var num; // Declaration
 num = 1; // Initialization
 
@@ -22,12 +22,12 @@ y = 6; // Initialization
 
 //Example 4 (Important)
 var flag = false;
-(function(){
-    console.log(flag);
-    var flag = true; // JavaScript only hoists declarations, not initializations, hence the above log prints undefined
-    console.log(flag);
+(function () {
+  console.log(flag);
+  var flag = true; // JavaScript only hoists declarations, not initializations, hence the above log prints undefined
+  console.log(flag);
 
-    /*
+  /*
         The above block becomes something like this:
 
         var flag; // Due to variable hoisting, and its value is `undefined` here.
@@ -36,18 +36,17 @@ var flag = false;
         console.log(flag);
     */
 
-    if(flag){
-        // let & const are always block scoped (here, `if` block!)
-        let name = "Betty";
-        const age = "24";
+  if (flag) {
+    // let & const are always block scoped (here, `if` block!)
+    let name = "Betty";
+    const age = "24";
 
-        console.log(name);
-        console.log(age);
-    }
+    console.log(name);
+    console.log(age);
+  }
 
-    //console.log(name); //ReferenceError: name is not defined ( as name is block scoped here )
-    //console.log(age);  //ReferenceError: age is not defined ( as age is block scoped )
-
+  //console.log(name); //ReferenceError: name is not defined ( as name is block scoped here )
+  //console.log(age);  //ReferenceError: age is not defined ( as age is block scoped )
 })();
 /*
 undefined

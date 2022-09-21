@@ -3,7 +3,7 @@ var arr1 = ["John", "Kevin", "Adam"];
 var name = "John,Kevin,Adam";
 
 console.log(arr == name); //true
-console.log(arr == name); //true
+console.log(arr === name); //false
 console.log(arr1 == name); //true
 /* Important, arrays are by default coerced to strings by simply
    joining all the values with commas ( , ) in between.

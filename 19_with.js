@@ -5,14 +5,14 @@
 */
 
 let foo = (obj) => {
-    with(obj){
-        name = "Jatil Yadav"
-    }
-}
+  with (obj) {
+    name = "Jatil Yadav";
+  }
+};
 
 let o1 = {
-    fullName: "Jatil Yadav"
-}
+  fullName: "Jatil Yadav",
+};
 
 foo(o1);
 console.log(o1.fullName); // Jatil Yadav
@@ -28,8 +28,8 @@ console.log(name); // Jatil Yadav -> Scope Variable Leaked!!
 */
 
 // Not exaclty leaking? -> V.IMP.
-function person(){
-    age = 24;
+function person() {
+  age = 24;
 }
 person();
 console.log(age); // 24 !!

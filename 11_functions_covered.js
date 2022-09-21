@@ -1,40 +1,42 @@
-//Example 1
+//"use strict";  // same as w/o
+
+//Example 1 // Fat arrow function example
 var greet = (message) => {
-    console.log("Hello, "+message);
-}
+  console.log("Hello, " + message);
+};
 greet("it's nice meeting you!");
 //Hello, it's nice meeting you!
 
 //Example 2
-function myFunc(name){
-    this.name = name;
-    this.getName = () => {
-        console.log("My name is "+this.name);
-    }
-    this.age = 24;
+function myFunc(name) {
+  this.name = name;
+  this.getName = () => {
+    console.log("My name is " + this.name);
+  };
+  this.age = 24;
 }
 var obj = new myFunc("John");
+globalThis.name = "hello";
 obj.getName(); //My name is John
-var separateGetName = obj.getName;
-separateGetName(); //My name is John
+globalThis.separateGetName = obj.getName; // reference
+globalThis.separateGetName(); //My name is John
+
+// Example 3
 myFunc.title = "Hello World!";
 console.log(myFunc.title); //Hello World!
-
 console.log(myFunc); //[Function: myFunc] { title: 'Hello World!' }
-console.log(typeof(myFunc)); //function => "function" is a subtype of "object"
-console.log(typeof(obj.getName()));
-// My name is John
-//undefined
-console.log(typeof(obj.age)); //number
+console.log(typeof myFunc); //function => "function" is a subtype of "object"
+console.log(typeof obj.getName()); // My name is John //undefined
+console.log(typeof obj.age); //number
 
+//Example 4 (Anonymous Function - More Common)
+var foo = function () {
+  console.log("Hello!");
+};
 
-//Example 3 (Anonymous Function - More Common)
-var foo = function(){
-    console.log("Hello!");
-}
-
-//Example 4 (Named Function)
-var x = function bar(){
-    console.log("Hey!");
-}
+//Example 5 (Named Function)
+var x = function bar() {
+  console.log("Hey!");
+};
 // bar(); //bar is not defiend
+x(); // Hey!

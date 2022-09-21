@@ -6,25 +6,25 @@ public API that is accessible from the outside.
 */
 
 //1
-function User(){
-    var username, password;
+function User() {
+  var username, password;
 
-    function login(uname, pass){
-        username = uname;
-        password = pass;
-    }
+  function login(uname, pass) {
+    username = uname;
+    password = pass;
+  }
 
-    function getUserDetails(){
-        console.log("Username: "+username);
-        console.log("Password: "+password);
-    }
+  function getUserDetails() {
+    console.log("Username: " + username);
+    console.log("Password: " + password);
+  }
 
-    var publicAPI = {
-        login,
-        getUserDetails
-    };
+  var publicAPI = {
+    login,
+    getUserDetails,
+  };
 
-    return publicAPI;
+  return publicAPI;
 }
 
 var admin = User(); // didn't use new because wastage of resources
@@ -49,8 +49,8 @@ Password: admin1234
 
 //2
 var sumCalculator = (a, b) => {
-    return a+b;
-}
-module.exports = { 
-    sumCalculator
-}
+  return a + b;
+};
+module.exports = {
+  sumCalculator,
+};

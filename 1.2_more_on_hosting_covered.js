@@ -1,12 +1,13 @@
 // var - local vs global scope
 
-(function fun(){
-    var a = b = 214, c = 0;
-    c = a+b;
-    console.log(c);
+(function fun() {
+  var a = (b = 214),
+    c = 0;
+  c = a + b;
+  console.log(c); // 428
 })();
 
-// console.log(b); // 214
+console.log(b); // 214
 // console.log(a); // Reference error, a is not defined!
 // console.log(c); // Reference error, c is not defined!
 

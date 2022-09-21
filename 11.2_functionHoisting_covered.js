@@ -1,15 +1,14 @@
-
 // Function Hoisting
 
 //Example 1
-function foo(name){
-    console.log(name);
+function foo(name) {
+  console.log(name);
 }
 foo("Archie");
 
 bar("Veronica");
-function bar(name){
-    console.log(name);
+function bar(name) {
+  console.log(name);
 }
 /* One of the advantages of JavaScript putting function declarations into memory
 before it executes any code segment is that it allows you to use a function
@@ -21,23 +20,22 @@ Archie
 Veronica
 */
 
-
 //Example 2
-definitionNotHoisted(); //TypeError: definitionNotHoisted is not a function
+// definitionNotHoisted(); //TypeError: definitionNotHoisted is not a function
 
 definitionHoisted();
 
-function definitionHoisted(){
-    console.log("Here, both function definition and declaration are hoisted");
+function definitionHoisted() {
+  console.log("Here, both function definition and declaration are hoisted");
 }
 
 //Function Expression
 var definitionNotHoisted = () => {
-    console.log("Here, only function declaration is hoisted.")
-}
+  console.log("Here, only function declaration is hoisted.");
+};
 
 /*
-Output (When we comment out line 27):
+Output (When we comment out line 24):
 
 Here, both function definition and declaration are hoisted
 */
@@ -46,37 +44,35 @@ Here, both function definition and declaration are hoisted
 foo(); // TypeError
 bar(); // ReferenceError
 var foo = function bar() {
-    // ...
+  // ...
 };
 
 // Above one is interpreted as (not real code)
 var foo;
 foo(); // TypeError
 bar(); // ReferenceError
-foo = function() {
-    //var bar = ...self...
-    // ...
-}
-
+foo = function () {
+  //var bar = ...self...
+  // ...
+};
 
 //Example (Functions first!)
-
 foo(); // 1
 var foo;
 function foo() {
-    console.log( 1 );
+  console.log(1);
 }
-foo = function() {
-    console.log( 2 );
+foo = function () {
+  console.log(2);
 };
 
 // the above code is interpreted by the engine as
 function foo() {
-    console.log( 1 );
+  console.log(1);
 }
 foo(); // 1
-foo = function() {
-    console.log( 2 );
+foo = function () {
+  console.log(2);
 };
 
 /*
@@ -85,17 +81,16 @@ though it came before the function foo()... declaration, because function
 declarations are hoisted before normal variables.
 */
 
-
 // Example
 foo(); // 3
 function foo() {
-    console.log( 1 );
+  console.log(1);
 }
-var foo = function() {
-    console.log( 2 );
+var foo = function () {
+  console.log(2);
 };
 function foo() {
-    console.log( 3 );
+  console.log(3);
 }
 
 /*

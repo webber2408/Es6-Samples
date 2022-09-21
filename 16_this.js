@@ -6,19 +6,19 @@ It’s important to realize that this does not refer to the function itself,
 as is the most common misconception.
 */
 
-function fun(){
-    console.log(this.name);
+function fun() {
+  console.log(this.name);
 }
 
 var name = "Rahul Sharma";
-var obj1 = { // does not create its own scope
-    name: "Kevin",
-    fun: fun
+var obj1 = {
+  // does not create its own scope
+  name: "Kevin",
+  fun: fun,
 };
 var obj2 = {
-    name: "John"
-}
-
+  name: "John",
+};
 
 fun();
 obj1.fun();
@@ -30,14 +30,6 @@ Kevin
 John
 undefined
 */
-
-
-
-
-
-
-
-
 
 // MDN
 /*
@@ -56,26 +48,31 @@ Whereas when Normal function declarations are concerned, `this` depends on how t
 
 */
 
-console.log("--------Example 1 (Arrow Functions & Function Declarations)----------");
-var obj = { // obj doesnot form any enclosing scope
+console.log(
+  "--------Example 1 (Arrow Functions & Function Declarations)----------"
+);
+var obj = {
+  // obj doesnot form any enclosing scope
   age: 24,
-  incAge1: () => { // since this resolves to the global scope! as the object doesn't create an enclosing scope!
+  incAge1: () => {
+    // since this resolves to the global scope! as the object doesn't create an enclosing scope!
     this.age++;
   },
-  incAge2: function(){ // depends on how it is called
+  incAge2: function () {
+    // depends on how it is called
     this.age++;
-  }
-}
+  },
+};
 obj.incAge1(); // nothing happens
 obj.incAge2(); // 24+1 = 25
 console.log(obj.age); // 25
 
 // Great Example, (If you know this, you have done really great!)
 var obj = {
-  bar: function() {
-    var x = (() => this);
+  bar: function () {
+    var x = () => this;
     return x;
-  }
+  },
 };
 // Call bar as a method of obj, setting its this to obj
 // Assign a reference to the returned function to fn
@@ -87,9 +84,6 @@ var fn2 = obj.bar;
 // will now return window, because it follows the this from fn2.
 console.log(fn2()() == globalThis); // true
 
-
-
-
 console.log("--------Example 2 (Functions in Non-Strict Mode)----------");
 function f1() {
   return this; // resolves to the global object
@@ -99,66 +93,45 @@ function f1() {
 // In Node:
 console.log(f1() === globalThis); // true
 
-
-
-
-
 console.log("--------Example 3 (Functions in Strict Mode)----------");
-function f2(){
-  'use strict'
+function f2() {
+  "use strict";
   return this; // in the strict mode, the value of `this` is not set. Hence, it points to undefined.
 }
 console.log(f2() == undefined); // true
 
-
-
-
-
-console.log("--------Example 3.1 (Binding function's this based on how they are called!)----------");
+console.log(
+  "--------Example 3.1 (Binding function's this based on how they are called!)----------"
+);
 // An object can be passed as the first argument to call or apply and this will be bound to it.
-var obj = {a: 'Custom'};
+var obj = { a: "Custom" };
 // We declare a variable and the variable is assigned to the global window as its property.
-a = 'Global';
+a = "Global";
 function whatsThis() {
-  return this.a;  // The value of this is dependent on how the function is called
+  return this.a; // The value of this is dependent on how the function is called
 }
-console.log(whatsThis());          // 'Global' as this in the function isn't set, so it defaults to the global/window object
-console.log(whatsThis.call(obj));  // 'Custom' as this in the function is set to obj
+console.log(whatsThis()); // 'Global' as this in the function isn't set, so it defaults to the global/window object
+console.log(whatsThis.call(obj)); // 'Custom' as this in the function is set to obj
 console.log(whatsThis.apply(obj)); // 'Custom' as this in the function is set to obj
 
-
-
-
-
 console.log("--------Example 4 (Objects, Call & Apply)----------");
-function add(c, d){
+function add(c, d) {
   return this.a + this.b + c + d;
 }
-var o = {a: 1, b: 3};
+var o = { a: 1, b: 3 };
 console.log(add.call(o, 5, 7)); // 16 (if function statement, then NaN)
 console.log(add.apply(o, [10, 20])); // 34 (if function statement, then NaN)
-
-
-
-
-
 
 console.log("--------Example 4 (Objects, Call & Apply)----------");
 function f() {
   return this.a;
 }
-var g = f.bind({a: 'azerty'});
+var g = f.bind({ a: "azerty" });
 console.log(g()); // azerty
-var h = g.bind({a: 'yoo'}); // bind only works once!
+var h = g.bind({ a: "yoo" }); // bind only works once!
 console.log(h()); // azerty
-var o = {a: 37, f: f, g: g, h: h};
+var o = { a: 37, f: f, g: g, h: h };
 console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
-
-
-
-
-
-
 
 console.log("--------Example 6 (Class)----------");
 class Example {
@@ -166,18 +139,14 @@ class Example {
     const proto = Object.getPrototypeOf(this); // imp
     console.log(Object.getOwnPropertyNames(proto)); // imp
   }
-  first(){}
-  second(){}
-  static third(){}
+  first() {}
+  second() {}
+  static third() {}
 }
 new Example(); // ['constructor', 'first', 'second']
 //  in classes, static methods are not properties of `this` instead they are the properties of the class itself.
 // Unlike base class constructors, derived constructors have no initial `this` binding.
 // Calling  super() creates a `this` binding within the constructor
-
-
-
-
 
 console.log("--------Example 7 (Class Inheritance)----------");
 /*
@@ -187,14 +156,14 @@ class Base {}
 class Good extends Base {}
 class AlsoGood extends Base {
   constructor() {
-    return {a: 5};
+    return { a: 5 };
   }
 }
 class Bad extends Base {
   constructor() {}
 }
-class VeryGood extends Base{
-  constructor(){
+class VeryGood extends Base {
+  constructor() {
     super();
   }
 }
