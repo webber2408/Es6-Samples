@@ -1,6 +1,6 @@
 /*
 If a function has a `this` reference inside it, that `this` reference usu‐
-ally points to an object . But which object it points to depends on
+ally points to an object. But which object it points to depends on
 HOW THE FUNCTION WAS CALLED.
 It’s important to realize that this does not refer to the function itself,
 as is the most common misconception.

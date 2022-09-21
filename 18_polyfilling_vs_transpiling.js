@@ -6,10 +6,10 @@ older JS environments.
 */
 
 // Creating a pollyfill for Number.isNaN();
-if(!Number.isNaN){
-    Number.isNaN = function(x){
-        return x !== x;
-    }
+if (!Number.isNaN) {
+  Number.isNaN = function (x) {
+    return x !== x;
+  };
 }
 // NaN is the only value in JS which is not equal to itself!
 
