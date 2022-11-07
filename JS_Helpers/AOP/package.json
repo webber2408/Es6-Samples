@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@rahul2408/arrayofpromise": "^1.0.0",
+    "node-fetch": "^3.2.10"
+  }
+}
